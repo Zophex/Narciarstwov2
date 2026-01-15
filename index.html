@@ -1,0 +1,199 @@
+ <!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasja do Śniegu - Wszystko o Narciarstwie</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f9ff;
+        }
+#timer { font-size: 2em; text-align: center; }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        nav {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .highlight {
+            background-color: #e7f3fe;
+            border-left: 5px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #2c3e50;
+            color: white;
+            margin-top: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1-fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>⛷️ Pasja do Śniegu</h1>
+    <p>Odkryj magię narciarstwa i przygotuj się na sezon!</p>
+</header>
+
+<nav>
+    Wszystko, co musisz wiedzieć o nartach w jednym miejscu
+</nav>
+
+<div class="container">
+    <section>
+        <h2>🏔️ Rodzaje Narciarstwa</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Alpejskie (Zjazdowe)</h3>
+                <p>Klasyczna jazda po przygotowanych trasach. Najpopularniejsza forma rekreacji na świecie.</p>
+            </div>
+            <div class="card">
+                <h3>Skitouring</h3>
+                <p>Połączenie wspinaczki i zjazdów. Wolność poza wyznaczonymi trasami i bliskość natury.</p>
+            </div>
+            <div class="card">
+                <h3>Biegowe</h3>
+                <p>Znakomity trening cardio i sposób na podziwianie zimowych krajobrazów w spokojniejszym tempie.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🎿 Niezbędny Ekwipunek</h2>
+        <p>Dobór sprzętu ma kluczowe znaczenie dla Twojego postępu i zdrowia.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Element</th>
+                    <th>Na co zwrócić uwagę?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Narty</strong></td>
+                    <td>Dopasowane do wzrostu, wagi i poziomu umiejętności.</td>
+                </tr>
+                <tr>
+                    <td><strong>Buty</strong></td>
+                    <td>Muszą być wygodne (tzw. flex dopasowany do stopnia zaawansowania).</td>
+                </tr>
+                <tr>
+                    <td><strong>Kask</strong></td>
+                    <td>Niezbędny element ochrony głowy na każdym stoku.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>💡 Porady dla Początkujących</h2>
+        <div class="highlight">
+            <strong>Złota zasada:</strong> Nigdy nie przeceniaj swoich umiejętności. Pierwsze kroki najlepiej stawiać pod okiem profesjonalnego instruktora.
+        </div>
+        <ul>
+            <li><strong>Rozgrzewka:</strong> Zawsze poświęć 10 minut na krążenia stawów.</li>
+            <li><strong>Patrz przed siebie:</strong> Obserwuj otoczenie, nie tylko czubki własnych nart.</li>
+            <li><strong>Dekalog FIS:</strong> To kodeks drogowy na stoku – naucz się go dla wspólnego bezpieczeństwa.</li>
+        </ul>
+    </section>
+</div>
+
+<footer>
+<div id="countdown"></div>
+<p>Czas do Olimpiady zimowej 2026</p>
+<script>
+var endDate = new Date(2026, 1, 6, 0, 0, 0); 
+
+setInterval(function () {
+    var now = new Date();
+    var diff = endDate - now;
+
+    if (diff <= 0) {
+        document.getElementById("countdown").innerText = "Koniec";
+        return;
+    }
+
+    var d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    var h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    var m = Math.floor((diff / (1000 * 60)) % 60);
+    var s = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("countdown").innerText =
+        d + "d " + h + "h " + m + "m " + s + "s";
+}, 1000);
+</script>
+</div>
+</footer>
+
+</body>
+</html>
